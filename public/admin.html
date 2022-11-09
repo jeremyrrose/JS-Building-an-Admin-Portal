@@ -5,11 +5,38 @@
     <title>Admin Portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style type="text/css">
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+        form > div {
+            display: flex;
+            width: 100%;
+        }
+
+        form > div > input, textarea {
+            margin-left: 10px;
+            flex-grow: 100;
+        }
+    </style>
 </head>
 
 <body>
    <div id="root">
-       
+       <h1>Book Inventory</h1>
+       <div class="book-container"></div>
+       <div id="add-book">
+            <form>
+                <h3>Add a book:</h3>
+                <div>Title: <input id="title" type="text" /></div>
+                <div>Year: <input id="year" type="text" /></div>
+                <div>Description: <textarea id="description"></textarea></div>
+                <div>Quantity: <input id="quantity" type="number" /></div>
+                <div>Image URL: <input id="imageURL" type="text" /></div>
+                <button type="button" onclick="addBook()">ADD BOOK</button>
+            </form>
+       </div>
    </div>
     <!-- Our JavaScript Code  -->
     <script src="admin.js"></script>
